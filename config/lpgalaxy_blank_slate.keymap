@@ -80,13 +80,13 @@
 
         combo_str {
            timeout-ms = <50>;
-           key-positions = <25 45>;
+           key-positions = <24 44>;
            bindings = <&kp STAR>;
         };
 
         combo_crt {
             timeout-ms = <50>;
-            key-positions = <25 46>;
+            key-positions = <24 45>;
             bindings = <&kp CARET>;
         };
     };
