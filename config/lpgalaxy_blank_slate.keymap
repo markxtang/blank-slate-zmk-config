@@ -86,7 +86,7 @@
 
         combo_crt {
             timeout-ms = <50>;
-            key-positions = <25 45>;
+            key-positions = <25 46>;
             bindings = <&kp CARET>;
         };
     };
