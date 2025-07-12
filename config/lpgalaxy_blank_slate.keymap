@@ -10,9 +10,9 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define NAV_L 1
-#define NUM_L 2
-#define SYM_L 3
-#define SPR_L 4
+#define LFT_L 2
+#define RHT_L 3
+#define LNR_L 4
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -70,24 +70,8 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <NUM_L SYM_L>;
-            then-layer = <SPR_L>;
-        };
-    };
-
-    combos {
-        compatible = "zmk,combos";
-
-        combo_str {
-           timeout-ms = <50>;
-           key-positions = <24 44>;
-           bindings = <&kp STAR>;
-        };
-
-        combo_crt {
-            timeout-ms = <50>;
-            key-positions = <24 45>;
-            bindings = <&kp CARET>;
+            if-layers = <LFT_L RHT_L>;
+            then-layer = <LNR_L>;
         };
     };
 
@@ -102,12 +86,12 @@
 &kp ESC		    &kp Q		    &kp W		    &kp E	    	&kp R	    	&kp T	    	&kp Y		    &kp U		    &kp I		    &kp O		    &kp P		    &kp BKSP
 &TABBIE	    	&kp A	        &kp S	    	&kp D	    	&kp F	    	&kp G	    	&kp H		    &kp J		    &kp K		    &kp L		    &kp SEMI		&kp SQT
 &kp LSHFT    	&kp Z		    &kp X	    	&kp C	    	&kp V		    &kp B	    	&kp N		    &kp M		    &kp COMMA	    &kp DOT		    &kp FSLH	    &kp RSHFT
-&kp LCTRL   	&mo NAV_L       &kp LGUI    	&kp LALT    	&mo NUM_L   	&kp SPACE			            &mo SYM_L	    &kp MINUS	    &kp PLUS	    &kp EQUAL		&kp RET
+&kp LCTRL   	&mo NAV_L       &kp LGUI    	&kp LALT    	&mo LFT_L   	&kp SPACE			            &mo RHT_L	    &kp MINUS	    &kp PLUS	    &kp EQUAL		&kp RET
             >;
         };
 
-        nav_layer {
-            label = "Nav";
+        NAV_layer {
+            label = "NAV";
             bindings = <
 &soft_off     	&kp F7        	&kp F8        	&kp F9        	&kp F10       	&kp F11       	&kp F12       	&trans        	&trans        	&bootloader   	&trans        	&bt BT_CLR    
 &trans        	&kp F4        	&kp F5        	&kp F6        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        
@@ -116,18 +100,18 @@
             >;
         };
 
-        num_layer {
-            label = "Num";
+        LFT_layer {
+            label = "LFT";
             bindings = <
 &kp GRAVE      	&kp N7        	&kp N8        	&kp N9        	&trans        	&trans        	&trans        	&trans        	&trans        	&kp PG_UP      	&trans        	&kp DEL       
 &caps_word     	&kp N4        	&kp N5        	&kp N6        	&trans        	&trans        	&trans        	&trans        	&kp HOME       	&kp PG_DN      	&kp END      	&trans        
 &trans        	&kp N1        	&kp N2        	&kp N3        	&trans        	&trans        	&trans        	&trans        	&kp LBKT      	&kp RBKT      	&kp PIPE      	&trans        
-&trans        	&trans        	&kp N0        	&trans        	&trans        	&trans        			        &trans        	&mcr_emdash    	&trans        	&trans        	&trans     
+&trans        	&trans        	&kp N0        	&trans        	&trans        	&trans        			        &trans        	&mcr_emdash    	&kp STAR       	&kp CARET      	&trans     
             >;
         };
 
-        sym_layer {
-            label = "Sym";
+        RHT_layer {
+            label = "RHT";
             bindings = <
 &kp TILDE      	&kp AMPS      	&kp STAR      	&mcr_deg	    &trans        	&trans        	&trans        	&trans        	&trans        	&kp UP       	&trans        	&kp DEL       
 &trans       	&kp DLLR      	&kp PRCNT     	&kp CARET       &trans        	&trans        	&trans        	&trans        	&kp LEFT       	&kp DOWN      	&kp RIGHT      	&trans        
@@ -136,9 +120,10 @@
             >;
         };
 
-                spr_layer {
-            label = "Spr";
+        LNR_layer {
+            label = "LNR";
             bindings = <
+&trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&trans
 &trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&trans
 &trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&kp LBRC      	&kp RBRC      	&trans      	&trans
 &trans        	&trans        	&trans        	&trans          &trans        	&trans        	            	&trans        	&trans        	&trans      	&trans      	&trans    
