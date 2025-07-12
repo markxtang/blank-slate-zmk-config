@@ -38,6 +38,24 @@
                 <&macro_tap &kp KP_N2 &kp KP_N4 &kp KP_N8>,
                 <&macro_release &kp LALT>;
         };
+
+        mcr_endash: mcr_endash {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp LALT>,
+                <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N5 &kp KP_N0>,
+                <&macro_release &kp LALT>;
+        };
+
+        mcr_emdash: mcr_emdash {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp LALT>,
+                <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N5 &kp KP_N1>,
+                <&macro_release &kp LALT>;
+        };
     };
     
     tap_dances {
@@ -54,6 +72,22 @@
         tri_layer {
             if-layers = <NUM_L SYM_L>;
             then-layer = <SPR_L>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_str {
+           timeout-ms = <50>;
+           key-positions = <25 45>;
+           bindings = <&kp STAR>;
+        };
+
+        combo_crt {
+            timeout-ms = <50>;
+            key-positions = <25 45>;
+            bindings = <&kp CARET>;
         };
     };
 
@@ -85,10 +119,10 @@
         num_layer {
             label = "Num";
             bindings = <
-&trans        	&kp N7        	&kp N8        	&kp N9        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans        	&kp DEL       
-&kp GRAVE     	&kp N4        	&kp N5        	&kp N6        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&kp COLON      	&trans        
+&trans        	&kp N7        	&kp N8        	&kp N9        	&trans        	&trans        	&trans        	&trans        	&trans        	&kp PG_UP      	&trans        	&kp DEL       
+&kp GRAVE     	&kp N4        	&kp N5        	&kp N6        	&trans        	&trans        	&trans        	&trans        	&kp HOME       	&kp PG_DN      	&kp END      	&trans        
 &trans        	&kp N1        	&kp N2        	&kp N3        	&trans        	&trans        	&trans        	&trans        	&kp LBKT      	&kp RBKT      	&kp PIPE      	&trans        
-&trans        	&trans        	&kp N0        	&trans        	&trans        	&trans        			        &trans        	&kp HOME     	&kp PG_DN   	&kp PG_UP   	&kp END     
+&trans        	&trans        	&kp N0        	&trans        	&trans        	&trans        			        &trans        	&mcr_emdash    	&trans        	&trans        	&trans     
             >;
         };
 
@@ -98,14 +132,13 @@
 &trans        	&kp AMPS      	&kp STAR      	&mcr_deg	    &trans        	&trans        	&trans        	&trans        	&trans        	&kp UP       	&trans        	&kp DEL       
 &kp TILDE     	&kp DLLR      	&kp PRCNT     	&kp CARET       &trans        	&trans        	&trans        	&trans        	&kp LEFT       	&kp DOWN      	&kp RIGHT      	&trans        
 &trans        	&kp EXCL      	&kp AT        	&kp HASH        &trans        	&trans        	&trans        	&trans        	&kp LPAR      	&kp RPAR      	&kp BSLH      	&trans    
-&trans        	&trans        	&trans        	&trans          &trans        	&trans        	            	&trans        	&trans        	&kp C_MUTE    	&kp C_VOL_DN  	&kp C_VOL_UP     
+&trans        	&trans        	&trans        	&trans          &trans        	&trans        	            	&trans        	&mcr_endash    	&kp C_MUTE    	&kp C_VOL_DN  	&kp C_VOL_UP     
             >;
         };
 
                 spr_layer {
             label = "Spr";
             bindings = <
-&trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&trans
 &trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&trans
 &trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&kp LBRC      	&kp RBRC      	&trans      	&trans
 &trans        	&trans        	&trans        	&trans          &trans        	&trans        	            	&trans        	&trans        	&trans      	&trans      	&trans    
@@ -114,3 +147,5 @@
 
     };
 };
+
+
