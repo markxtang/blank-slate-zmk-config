@@ -56,6 +56,26 @@
                 <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N5 &kp KP_N1>,
                 <&macro_release &kp LALT>;
         };
+
+        mcr_enspace: mcr_enspace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp LALT>,
+                <&macro_tap &kp KP_N8 &kp KP_N1 &kp KP_N9 &kp KP_N4>,
+                <&macro_release &kp LALT>;
+        };
+
+        mcr_emspace: mcr_emspace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp LALT>,
+                <&macro_tap &kp KP_N8 &kp KP_N1 &kp KP_N9 &kp KP_N5>,
+                <&macro_release &kp LALT>;
+        };
+
+
     };
     
     tap_dances {
@@ -106,7 +126,7 @@
 &kp GRAVE      	&kp N7        	&kp N8        	&kp N9        	&trans        	&trans        	&trans        	&trans        	&trans        	&kp PG_UP      	&trans        	&kp DEL       
 &caps_word     	&kp N4        	&kp N5        	&kp N6        	&trans        	&trans        	&trans        	&trans        	&kp HOME       	&kp PG_DN      	&kp END      	&trans        
 &trans        	&kp N1        	&kp N2        	&kp N3        	&trans        	&trans        	&trans        	&trans        	&kp LBKT      	&kp RBKT      	&kp PIPE      	&trans        
-&trans        	&trans        	&kp N0        	&trans        	&trans        	&trans        			        &trans        	&mcr_emdash    	&kp STAR       	&kp CARET      	&trans     
+&trans        	&trans        	&kp N0        	&trans        	&trans        	&mcr_emspace    		        &trans        	&mcr_emdash    	&kp STAR       	&kp CARET      	&trans     
             >;
         };
 
@@ -116,7 +136,7 @@
 &kp TILDE      	&kp AMPS      	&kp STAR      	&mcr_deg	    &trans        	&trans        	&trans        	&trans        	&trans        	&kp UP       	&trans        	&kp DEL       
 &trans       	&kp DLLR      	&kp PRCNT     	&kp CARET       &trans        	&trans        	&trans        	&trans        	&kp LEFT       	&kp DOWN      	&kp RIGHT      	&trans        
 &trans        	&kp EXCL      	&kp AT        	&kp HASH        &trans        	&trans        	&trans        	&trans        	&kp LPAR      	&kp RPAR      	&kp BSLH      	&trans    
-&trans        	&trans        	&trans        	&trans          &trans        	&trans        	            	&trans        	&mcr_endash    	&kp C_MUTE    	&kp C_VOL_DN  	&kp C_VOL_UP     
+&trans        	&trans        	&trans        	&trans          &trans        	&mcr_enspace                	&trans        	&mcr_endash    	&kp C_MUTE    	&kp C_VOL_DN  	&kp C_VOL_UP     
             >;
         };
 
