@@ -26,7 +26,7 @@
 
 / {
     chosen {
-       zmk,physical-layout = &layout_ortho_4x12_1x2u;
+       zmk,physical-layout = &layout_ortho_4x12_all1u;
     };
 
     macros {
@@ -106,37 +106,37 @@
 &kp ESC		    &kp Q		    &kp W		    &kp E	    	&kp R	    	&kp T	    	&kp Y		    &kp U		    &kp I		    &kp O		    &kp P		    &kp BKSP
 &TABBIE	    	&kp A	        &kp S	    	&kp D	    	&kp F	    	&kp G	    	&kp H		    &kp J		    &kp K		    &kp L		    &kp SEMI		&kp SQT
 &kp LSHFT    	&kp Z		    &kp X	    	&kp C	    	&kp V		    &kp B	    	&kp N		    &kp M		    &kp COMMA	    &kp DOT		    &kp FSLH	    &kp RSHFT
-&kp LCTRL   	&mo NAV_L       &kp LGUI    	&kp LALT    	&mo LFT_L   	&kp SPACE			            &mo RHT_L	    &kp MINUS	    &kp PLUS	    &kp EQUAL		&kp RET
+&kp LCTRL   	&mo NAV_L       &kp LGUI    	&kp LALT    	&kp SPACE       &mo LFT_L   	&mo RHT_L       &kp SPACE  	    &kp MINUS	    &kp PLUS	    &kp EQUAL		&kp RET
             >;
         };
 
         NAV_layer {
             label = "NAV";
             bindings = <
-&soft_off     	&kp F7        	&kp F8        	&kp F9        	&kp F10       	&kp F11       	&kp F12       	&trans        	&trans        	&bootloader   	&trans        	&bt BT_CLR    
-&trans        	&kp F4        	&kp F5        	&kp F6        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        
-&trans        	&kp F1        	&kp F2        	&kp F3        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        
-&trans        	&trans        	&trans        	&trans        	&trans        	&trans        			        &trans        	&bt BT(0)     	&bt BT(1)     	&bt BT(2)     	&bt BT(3)     
+&soft_off     	&trans        	&kp F7        	&kp F8        	&kp F9        	&kp F10       	&kp F11       	&kp F12       	&trans        	&bootloader   	&trans        	&bt BT_CLR    
+&trans        	&trans        	&kp F4        	&kp F5        	&kp F6        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        
+&trans        	&trans        	&kp F1        	&kp F2        	&kp F3        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        
+&trans        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        	&bt BT(0)     	&bt BT(1)     	&bt BT(2)     	&bt BT(3)     
             >;
         };
 
         LFT_layer {
             label = "LFT";
             bindings = <
-&kp GRAVE      	&kp N7        	&kp N8        	&kp N9        	&trans        	&trans        	&trans        	&trans        	&trans        	&kp PG_UP      	&trans        	&kp DEL       
-&caps_word     	&kp N4        	&kp N5        	&kp N6        	&trans        	&trans        	&trans        	&trans        	&kp HOME       	&kp PG_DN      	&kp END      	&trans        
-&trans        	&kp N1        	&kp N2        	&kp N3        	&trans        	&trans        	&trans        	&trans        	&kp LBKT      	&kp RBKT      	&kp PIPE      	&trans        
-&trans        	&trans        	&kp N0        	&trans        	&trans        	&mcr_emspace    		        &trans        	&mcr_emdash    	&kp STAR       	&kp CARET      	&trans     
+&kp GRAVE      	&trans        	&kp N7        	&kp N8        	&kp N9        	&trans        	&trans        	&trans        	&kp PG_UP      	&trans        	&trans        	&kp DEL       
+&caps_word     	&trans        	&kp N4        	&kp N5        	&kp N6        	&trans        	&trans        	&kp HOME       	&kp PG_DN      	&kp END      	&trans          &trans        
+&trans        	&trans        	&kp N1        	&kp N2        	&kp N3        	&trans        	&trans        	&trans        	&kp LBKT      	&kp RBKT      	&kp PIPE      	&trans        
+&trans        	&trans        	&trans        	&kp N0        	&trans        	&trans        	&trans          &mcr_emspace   	&mcr_emdash    	&kp STAR       	&kp CARET      	&trans     
             >;
         };
 
         RHT_layer {
             label = "RHT";
             bindings = <
-&kp TILDE      	&kp AMPS      	&kp STAR      	&mcr_deg	    &trans        	&trans        	&trans        	&trans        	&trans        	&kp UP       	&trans        	&kp DEL       
-&trans       	&kp DLLR      	&kp PRCNT     	&kp CARET       &trans        	&trans        	&trans        	&trans        	&kp LEFT       	&kp DOWN      	&kp RIGHT      	&trans        
-&trans        	&kp EXCL      	&kp AT        	&kp HASH        &trans        	&trans        	&trans        	&trans        	&kp LPAR      	&kp RPAR      	&kp BSLH      	&trans    
-&trans        	&trans        	&trans        	&trans          &trans        	&mcr_enspace                	&trans        	&mcr_endash    	&kp C_MUTE    	&kp C_VOL_DN  	&kp C_VOL_UP     
+&kp TILDE      	&trans        	&kp AMPS      	&kp STAR      	&mcr_deg	    &trans        	&trans        	&trans        	&kp UP       	&trans        	&trans        	&kp DEL       
+&trans       	&trans        	&kp DLLR      	&kp PRCNT     	&kp CARET       &trans        	&trans        	&kp LEFT       	&kp DOWN      	&kp RIGHT      	&trans          &trans        
+&trans        	&trans        	&kp EXCL      	&kp AT        	&kp HASH        &trans        	&trans        	&trans        	&kp LPAR      	&kp RPAR      	&kp BSLH      	&trans    
+&trans        	&trans        	&trans        	&trans        	&mcr_enspace    &trans        	&trans        	&trans        	&mcr_endash    	&kp C_MUTE    	&kp C_VOL_DN  	&kp C_VOL_UP     
             >;
         };
 
@@ -146,7 +146,7 @@
 &trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&trans
 &trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&trans
 &trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&kp LBRC      	&kp RBRC      	&trans      	&trans
-&trans        	&trans        	&trans        	&trans          &trans        	&trans        	            	&trans        	&trans        	&trans      	&trans      	&trans    
+&trans        	&trans        	&trans        	&trans          &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&trans    
             >;
         };
 
