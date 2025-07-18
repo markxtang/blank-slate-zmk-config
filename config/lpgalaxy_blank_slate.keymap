@@ -106,7 +106,7 @@
 &kp ESC		    &kp Q		    &kp W		    &kp E	    	&kp R	    	&kp T	    	&kp Y		    &kp U		    &kp I		    &kp O		    &kp P		    &kp BKSP
 &TABBIE	    	&kp A	        &kp S	    	&kp D	    	&kp F	    	&kp G	    	&kp H		    &kp J		    &kp K		    &kp L		    &kp SEMI		&kp SQT
 &kp LSHFT    	&kp Z		    &kp X	    	&kp C	    	&kp V		    &kp B	    	&kp N		    &kp M		    &kp COMMA	    &kp DOT		    &kp FSLH	    &kp RSHFT
-&kp LCTRL   	&mo NAV_L       &kp LGUI    	&kp LALT    	&kp SPACE       &lt LFT_L SPACE &lt RHT_L SPACE &kp SPACE  	    &kp MINUS	    &kp PLUS	    &kp EQUAL		&kp RET
+&kp LCTRL   	&mo NAV_L       &kp LGUI    	&kp LALT    	&lt LFT_L SPACE &lt LFT_L SPACE &lt RHT_L SPACE &lt RHT_L SPACE &kp MINUS	    &kp PLUS	    &kp EQUAL		&kp RET
             >;
         };
 
