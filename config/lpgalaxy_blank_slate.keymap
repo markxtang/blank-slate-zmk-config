@@ -75,7 +75,16 @@
                 <&macro_release &kp LALT>;
         };
 
-
+        hold_cas: hold_cas {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                /* On press: hold Ctrl, Alt, Shift */
+                &macro_press   &kp LCTRL &kp LALT &kp LSHIFT
+                /* On release: release Ctrl, Alt, Shift */
+                &macro_release &kp LCTRL &kp LALT &kp LSHIFT
+            >;
+        };
     };
     
     tap_dances {
@@ -106,11 +115,11 @@
 &kp ESC		    &kp Q		    &kp W		    &kp E	    	&kp R	    	&kp T	    	&kp Y		    &kp U		    &kp I		    &kp O		    &kp P		    &kp BKSP
 &TABBIE	    	&kp A	        &kp S	    	&kp D	    	&kp F	    	&kp G	    	&kp H		    &kp J		    &kp K		    &kp L		    &kp SEMI		&kp SQT
 &kp LSHFT    	&kp Z		    &kp X	    	&kp C	    	&kp V		    &kp B	    	&kp N		    &kp M		    &kp COMMA	    &kp DOT		    &kp FSLH	    &kp RSHFT
-&kp LCTRL   	&mo NAV_L       &kp LGUI    	&kp LALT    	&lt LFT_L SPACE &lt LFT_L SPACE &lt RHT_L SPACE &lt RHT_L SPACE &kp MINUS	    &kp PLUS	    &kp EQUAL		&kp RET
+&kp LCTRL   	&mo NAV_L       &kp LGUI    	&kp LALT    	&mt LCTRL BKSP  &lt LFT_L SPACE &lt RHT_L SPACE &mt RSHFT DEL   &mt RALT MINUS  &kp PLUS	    &kp EQUAL		&kp RET
             >;
         };
 
-        NAV_layer {
+        NAV_layer { 
             label = "NAV";
             bindings = <
 &soft_off     	&trans        	&kp F7        	&kp F8        	&kp F9        	&kp F10       	&kp F11       	&kp F12       	&trans        	&bootloader   	&trans        	&bt BT_CLR    
@@ -126,7 +135,7 @@
 &kp GRAVE      	&trans        	&kp N7        	&kp N8        	&kp N9        	&trans        	&trans        	&trans        	&kp PG_UP      	&trans        	&trans        	&kp DEL       
 &caps_word     	&trans        	&kp N4        	&kp N5        	&kp N6        	&trans        	&trans        	&kp HOME       	&kp PG_DN      	&kp END      	&trans          &trans        
 &trans        	&trans        	&kp N1        	&kp N2        	&kp N3        	&trans        	&trans        	&trans        	&kp LBKT      	&kp RBKT      	&kp PIPE      	&trans        
-&trans        	&trans        	&trans        	&kp N0        	&trans        	&trans        	&trans          &mcr_emspace   	&mcr_emdash    	&kp STAR       	&kp CARET      	&trans     
+&trans        	&trans        	&trans        	&kp N0        	&trans        	&trans        	&mcr_enspace    &trans         	&mcr_emdash    	&kp STAR       	&kp CARET      	&trans     
             >;
         };
 
@@ -136,7 +145,7 @@
 &kp TILDE      	&trans        	&kp AMPS      	&kp STAR      	&mcr_deg	    &trans        	&trans        	&trans        	&kp UP       	&trans        	&trans        	&kp DEL       
 &trans       	&trans        	&kp DLLR      	&kp PRCNT     	&kp CARET       &trans        	&trans        	&kp LEFT       	&kp DOWN      	&kp RIGHT      	&trans          &trans        
 &trans        	&trans        	&kp EXCL      	&kp AT        	&kp HASH        &trans        	&trans        	&trans        	&kp LPAR      	&kp RPAR      	&kp BSLH      	&trans    
-&trans        	&trans        	&trans        	&trans        	&mcr_enspace    &trans        	&trans        	&trans        	&mcr_endash    	&kp C_MUTE    	&kp C_VOL_DN  	&kp C_VOL_UP     
+&trans        	&trans        	&trans        	&trans        	&hold_cas       &mcr_emspace   	&trans        	&trans        	&mcr_endash    	&kp C_MUTE    	&kp C_VOL_DN  	&kp C_VOL_UP     
             >;
         };
 
