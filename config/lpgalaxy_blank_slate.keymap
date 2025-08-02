@@ -85,6 +85,37 @@
                 &macro_release &kp LCTRL &kp LALT &kp LSHIFT
             >;
         };
+
+        win_snip: win_snip {
+            compatible    = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms       = <10>;   /* small delay before tapping */
+            tap-ms        = <10>;   /* ensure host registers the tap */
+            bindings = <
+                /* on press: hold Windows + Shift */
+                &macro_press   &kp LGUI &kp LSHIFT
+                /* tap the “S” key */
+                &macro_tap     &kp S
+                /* on release: release Windows + Shift */
+                &macro_release &kp LGUI &kp LSHIFT
+            >;
+        };
+
+        ctrl_alt_del: ctrl_alt_del {
+            compatible    = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms       = <10>;   /* small delay before tapping */
+            tap-ms        = <10>;   /* ensure host registers the tap */
+            bindings = <
+                /* on press: hold Windows + Shift */
+                &macro_press   &kp LCTRL &kp LALT 
+                /* tap the “S” key */
+                &macro_tap     &kp DEL
+                /* on release: release Windows + Shift */
+                &macro_release &kp LCTRL &kp LALT 
+            >;
+        };
+
     };
     
     tap_dances {
@@ -112,7 +143,7 @@
         base_layer {
             label = "Base";
             bindings = <
-&kp ESC		    &kp Q		    &kp W		    &kp E	    	&kp R	    	&kp T	    	&kp Y		    &kp U		    &kp I		    &kp O		    &kp P		    &kp BKSP
+&kp ESC		    &kp Q		    &kp W		    &kp E	    	&kp R	    	&kp T	    	&kp Y		    &kp U		    &kp I		    &kp O		    &kp P		    &win_snip
 &TABBIE	    	&kp A	        &kp S	    	&kp D	    	&kp F	    	&kp G	    	&kp H		    &kp J		    &kp K		    &kp L		    &kp SEMI		&kp SQT
 &kp LSHFT    	&kp Z		    &kp X	    	&kp C	    	&kp V		    &kp B	    	&kp N		    &kp M		    &kp COMMA	    &kp DOT		    &kp FSLH	    &kp RSHFT
 &kp LCTRL   	&mo NAV_L       &kp LGUI    	&kp LALT    	&mt LCTRL BKSP  &lt LFT_L SPACE &lt RHT_L SPACE &mt RSHFT DEL   &mt RALT MINUS  &kp PLUS	    &kp EQUAL		&kp RET
@@ -132,7 +163,7 @@
         LFT_layer {
             label = "LFT";
             bindings = <
-&kp GRAVE      	&trans        	&kp N7        	&kp N8        	&kp N9        	&trans        	&trans        	&trans        	&kp PG_UP      	&trans        	&trans        	&kp DEL       
+&kp GRAVE      	&trans        	&kp N7        	&kp N8        	&kp N9        	&trans        	&trans        	&trans        	&kp PG_UP      	&trans        	&trans        	&trans       
 &caps_word     	&trans        	&kp N4        	&kp N5        	&kp N6        	&trans        	&trans        	&kp HOME       	&kp PG_DN      	&kp END      	&trans          &trans        
 &trans        	&trans        	&kp N1        	&kp N2        	&kp N3        	&trans        	&trans        	&trans        	&kp LBKT      	&kp RBKT      	&kp PIPE      	&trans        
 &trans        	&trans        	&trans        	&kp N0        	&trans        	&trans        	&mcr_enspace    &trans         	&mcr_emdash    	&kp STAR       	&kp CARET      	&trans     
@@ -142,7 +173,7 @@
         RHT_layer {
             label = "RHT";
             bindings = <
-&kp TILDE      	&trans        	&kp AMPS      	&kp STAR      	&mcr_deg	    &trans        	&trans        	&trans        	&kp UP       	&trans        	&trans        	&kp DEL       
+&kp TILDE      	&trans        	&kp AMPS      	&kp STAR      	&mcr_deg	    &trans        	&trans        	&trans        	&kp UP       	&trans        	&trans        	&trans       
 &trans       	&trans        	&kp DLLR      	&kp PRCNT     	&kp CARET       &trans        	&trans        	&kp LEFT       	&kp DOWN      	&kp RIGHT      	&trans          &trans        
 &trans        	&trans        	&kp EXCL      	&kp AT        	&kp HASH        &trans        	&trans        	&trans        	&kp LPAR      	&kp RPAR      	&kp BSLH      	&trans    
 &trans        	&trans        	&trans        	&trans        	&hold_cas       &mcr_emspace   	&trans        	&trans        	&mcr_endash    	&kp C_MUTE    	&kp C_VOL_DN  	&kp C_VOL_UP     
@@ -152,7 +183,7 @@
         LNR_layer {
             label = "LNR";
             bindings = <
-&trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&trans
+&trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&ctrl_alt_del
 &trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&trans
 &trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&kp LBRC      	&kp RBRC      	&trans      	&trans
 &trans        	&trans        	&trans        	&trans          &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&trans    
