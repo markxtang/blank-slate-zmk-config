@@ -29,6 +29,15 @@
        zmk,physical-layout = &layout_ortho_4x12_all1u;
     };
 
+    behaviors {
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+
     macros {
         mcr_deg: mcr_deg {
             compatible = "zmk,behavior-macro";
@@ -143,7 +152,7 @@
         base_layer {
             label = "Base";
             bindings = <
-&kp ESC		    &kp Q		    &kp W		    &kp E	    	&kp R	    	&kp T	    	&kp Y		    &kp U		    &kp I		    &kp O		    &kp P		    &win_snip
+&kp ESC		    &kp Q		    &kp W		    &kp E	    	&kp R	    	&kp T	    	&kp Y		    &kp U		    &kp I		    &kp O		    &kp P		    &bspc_del
 &TABBIE	    	&kp A	        &kp S	    	&kp D	    	&kp F	    	&kp G	    	&kp H		    &kp J		    &kp K		    &kp L		    &kp SEMI		&kp SQT
 &kp LSHFT    	&kp Z		    &kp X	    	&kp C	    	&kp V		    &kp B	    	&kp N		    &kp M		    &kp COMMA	    &kp DOT		    &kp FSLH	    &kp RSHFT
 &kp LCTRL   	&mo NAV_L       &kp LGUI    	&kp LALT    	&mt LCTRL BKSP  &lt LFT_L SPACE &lt RHT_L SPACE &mt RSHFT DEL   &mt RALT MINUS  &kp PLUS	    &kp EQUAL		&kp RET
@@ -163,7 +172,7 @@
         LFT_layer {
             label = "LFT";
             bindings = <
-&kp GRAVE      	&trans        	&kp N7        	&kp N8        	&kp N9        	&trans        	&trans        	&trans        	&kp PG_UP      	&trans        	&trans        	&trans       
+&kp GRAVE      	&trans        	&kp N7        	&kp N8        	&kp N9        	&trans        	&trans        	&trans        	&kp PG_UP      	&trans        	&trans        	&ctrl_alt_del       
 &caps_word     	&trans        	&kp N4        	&kp N5        	&kp N6        	&trans        	&trans        	&kp HOME       	&kp PG_DN      	&kp END      	&trans          &trans        
 &trans        	&trans        	&kp N1        	&kp N2        	&kp N3        	&trans        	&trans        	&trans        	&kp LBKT      	&kp RBKT      	&kp PIPE      	&trans        
 &trans        	&trans        	&trans        	&kp N0        	&trans        	&trans        	&mcr_enspace    &trans         	&mcr_emdash    	&kp STAR       	&kp CARET      	&trans     
@@ -173,7 +182,7 @@
         RHT_layer {
             label = "RHT";
             bindings = <
-&kp TILDE      	&trans        	&kp AMPS      	&kp STAR      	&mcr_deg	    &trans        	&trans        	&trans        	&kp UP       	&trans        	&trans        	&trans       
+&kp TILDE      	&trans        	&kp AMPS      	&kp STAR      	&mcr_deg	    &trans        	&trans        	&trans        	&kp UP       	&trans        	&trans        	&win_snip       
 &trans       	&trans        	&kp DLLR      	&kp PRCNT     	&kp CARET       &trans        	&trans        	&kp LEFT       	&kp DOWN      	&kp RIGHT      	&trans          &trans        
 &trans        	&trans        	&kp EXCL      	&kp AT        	&kp HASH        &trans        	&trans        	&trans        	&kp LPAR      	&kp RPAR      	&kp BSLH      	&trans    
 &trans        	&trans        	&trans        	&trans        	&hold_cas       &mcr_emspace   	&trans        	&trans        	&mcr_endash    	&kp C_MUTE    	&kp C_VOL_DN  	&kp C_VOL_UP     
@@ -183,7 +192,7 @@
         LNR_layer {
             label = "LNR";
             bindings = <
-&trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&ctrl_alt_del
+&trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&trans
 &trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&trans
 &trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&kp LBRC      	&kp RBRC      	&trans      	&trans
 &trans        	&trans        	&trans        	&trans          &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&trans    
