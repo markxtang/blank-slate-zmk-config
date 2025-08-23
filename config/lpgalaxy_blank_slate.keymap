@@ -12,7 +12,6 @@
 #define NAV_L 1
 #define LFT_L 2
 #define RHT_L 3
-#define LNR_L 4
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -141,7 +140,7 @@
         compatible = "zmk,conditional-layers";
         tri_layer {
             if-layers = <LFT_L RHT_L>;
-            then-layer = <LNR_L>;
+            then-layer = <NAV_L>;
         };
     };
 
@@ -156,7 +155,7 @@
 &kp ESC		    &kp Q		    &kp W		    &kp E	    	&kp R	    	&kp T	    	&kp Y		    &kp U		    &kp I		    &kp O		    &kp P		    &bspc_del
 &TABBIE	    	&kp A	        &kp S       	&kp D	    	&kp F	    	&kp G	    	&kp H		    &kp J		    &kp K		    &kp L		    &kp SEMI		&kp SQT
 &kp LSHFT    	&kp Z		    &kp X	    	&kp C	    	&kp V		    &kp B	    	&kp N		    &kp M		    &kp COMMA	    &kp DOT		    &kp FSLH	    &kp RSHFT
-&kp LCTRL   	&mo NAV_L       &kp LGUI    	&kp LALT    	&mt LCTRL BKSP  &lt LFT_L SPACE &lt RHT_L SPACE &mt RSHFT DEL   &mt RALT MINUS  &kp PLUS	    &kp EQUAL		&kp RET
+&kp LCTRL   	&mo NAV_L       &kp LGUI    	&kp LALT    	&kp PLUS        &lt LFT_L SPACE &lt RHT_L SPACE &kp MINUS       &mcr_endash     &mcr_emdash	    &kp PIPE		&kp RET
             >;
         };
 
@@ -175,30 +174,21 @@
             bindings = <
 &kp GRAVE      	&trans        	&kp N7        	&kp N8        	&kp N9        	&trans        	&trans        	&trans        	&kp PG_UP      	&trans        	&trans        	&ctrl_alt_del       
 &caps_word     	&trans        	&kp N4        	&kp N5        	&kp N6        	&trans        	&trans        	&kp HOME       	&kp PG_DN      	&kp END      	&trans          &trans        
-&trans        	&trans        	&kp N1        	&kp N2        	&kp N3        	&trans        	&trans        	&trans        	&kp LBKT      	&kp RBKT      	&kp PIPE      	&trans        
-&trans        	&trans        	&trans        	&kp N0        	&trans        	&trans        	&mcr_enspace    &trans         	&mcr_emdash    	&kp STAR       	&kp CARET      	&trans     
+&trans        	&trans        	&kp N1        	&kp N2        	&kp N3        	&trans        	&trans        	&trans        	&kp LBKT      	&kp RBKT      	&trans      	&trans        
+&trans        	&trans        	&trans        	&kp N0        	&trans         	&trans        	&trans          &trans         	&mcr_enspace    &mcr_emspace    &trans      	&trans     
             >;
         };
 
         RHT_layer {
             label = "RHT";
             bindings = <
-&kp TILDE      	&trans        	&kp AMPS      	&kp STAR      	&mcr_deg	    &trans        	&trans        	&trans        	&kp UP       	&trans        	&trans        	&win_snip       
+&trans      	&trans        	&kp AMPS      	&kp STAR      	&mcr_deg	    &trans        	&trans        	&trans        	&kp UP       	&trans        	&trans        	&win_snip       
 &trans       	&trans        	&kp DLLR      	&kp PRCNT     	&kp CARET       &trans        	&trans        	&kp LEFT       	&kp DOWN      	&kp RIGHT      	&trans          &trans        
 &trans        	&trans        	&kp EXCL      	&kp AT        	&kp HASH        &trans        	&trans        	&trans        	&kp LPAR      	&kp RPAR      	&kp BSLH      	&trans    
-&trans        	&trans        	&trans        	&trans        	&hold_cas       &mcr_emspace   	&trans        	&trans        	&mcr_endash    	&kp C_MUTE    	&kp C_VOL_DN  	&kp C_VOL_UP     
-            >;
-        };
-
-        LNR_layer {
-            label = "LNR";
-            bindings = <
-&trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&trans
-&trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&trans
-&trans        	&trans      	&trans      	&trans  	    &trans        	&trans        	&trans        	&trans        	&kp LBRC      	&kp RBRC      	&trans      	&trans
-&trans        	&trans        	&trans        	&trans          &trans        	&trans        	&trans        	&trans        	&trans        	&trans      	&trans      	&trans    
+&trans        	&trans        	&trans        	&trans        	&trans          &trans         	&trans        	&trans         	&trans      	&kp C_MUTE    	&kp C_VOL_DN  	&kp C_VOL_UP     
             >;
         };
 
     };
 };
+
