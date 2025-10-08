@@ -136,14 +136,6 @@
 		bindings = <&kp TAB>, <&caps_word>;
 	};
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <LFT_L RHT_L>;
-            then-layer = <NAV_L>;
-        };
-    };
-
     };
 
     keymap {
@@ -172,7 +164,7 @@
         LFT_layer {
             label = "LFT";
             bindings = <
-&kp GRAVE      	&trans        	&kp N7        	&kp N8        	&kp N9        	&trans        	&trans        	&trans        	&kp PG_UP      	&trans        	&trans        	&ctrl_alt_del       
+&kp GRAVE      	&trans        	&kp N7        	&kp N8        	&kp N9        	&trans        	&trans        	&trans        	&kp PG_UP      	&bootloader    	&trans        	&ctrl_alt_del       
 &caps_word     	&trans        	&kp N4        	&kp N5        	&kp N6        	&trans        	&trans        	&kp HOME       	&kp PG_DN      	&kp END      	&trans          &trans        
 &trans        	&trans        	&kp N1        	&kp N2        	&kp N3        	&trans        	&trans        	&trans        	&kp LBKT      	&kp RBKT      	&trans      	&trans        
 &trans        	&trans        	&trans        	&kp N0        	&trans         	&trans        	&trans          &trans         	&mcr_enspace    &mcr_emspace    &trans      	&trans     
