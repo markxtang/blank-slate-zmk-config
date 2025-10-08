@@ -147,7 +147,7 @@
 &kp ESC		    &kp Q		    &kp W		    &kp E	    	&kp R	    	&kp T	    	&kp Y		    &kp U		    &kp I		    &kp O		    &kp P		    &bspc_del
 &TABBIE	    	&kp A	        &kp S       	&kp D	    	&kp F	    	&kp G	    	&kp H		    &kp J		    &kp K		    &kp L		    &kp SEMI		&kp SQT
 &kp LSHFT    	&kp Z		    &kp X	    	&kp C	    	&kp V		    &kp B	    	&kp N		    &kp M		    &kp COMMA	    &kp DOT		    &kp FSLH	    &kp RSHFT
-&kp LCTRL   	&kp EQUAL       &kp LGUI    	&kp LALT    	&mo NAV_L       &lt LFT_L SPACE &lt RHT_L SPACE &kp MINUS       &mcr_endash     &mcr_emdash	    &kp BSLH		&kp RET
+&kp LCTRL   	&mo NAV_L       &kp LGUI    	&kp LALT    	&kp EQUAL       &lt LFT_L SPACE &lt RHT_L SPACE &kp MINUS       &mcr_endash     &mcr_emdash	    &kp BSLH		&kp RET
             >;
         };
 
@@ -164,7 +164,7 @@
         LFT_layer {
             label = "LFT";
             bindings = <
-&kp GRAVE      	&trans        	&kp N7        	&kp N8        	&kp N9        	&trans        	&trans        	&trans        	&kp PG_UP      	&bootloader    	&trans        	&ctrl_alt_del       
+&kp GRAVE      	&trans        	&kp N7        	&kp N8        	&kp N9        	&trans        	&trans        	&trans        	&kp PG_UP      	&trans        	&trans        	&ctrl_alt_del       
 &caps_word     	&trans        	&kp N4        	&kp N5        	&kp N6        	&trans        	&trans        	&kp HOME       	&kp PG_DN      	&kp END      	&trans          &trans        
 &trans        	&trans        	&kp N1        	&kp N2        	&kp N3        	&trans        	&trans        	&trans        	&kp LBKT      	&kp RBKT      	&trans      	&trans        
 &trans        	&trans        	&trans        	&kp N0        	&trans         	&trans        	&trans          &trans         	&mcr_enspace    &mcr_emspace    &trans      	&trans     
@@ -183,4 +183,3 @@
 
     };
 };
-
