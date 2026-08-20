@@ -111,8 +111,33 @@
                 /* tap the “S” key */
                 &macro_tap     &kp DEL
                 /* on release: release Windows + Shift */
-                &macro_release &kp LCTRL &kp LALT 
+                &macro_release &kp LCTRL &kp LALT
             >;
+        };
+
+        mcr_linkedin: mcr_linkedin {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap
+                    &kp H &kp T &kp T &kp P &kp S &kp COLON &kp FSLH &kp FSLH
+                    &kp W &kp W &kp W &kp DOT
+                    &kp L &kp I &kp N &kp K &kp E &kp D &kp I &kp N &kp DOT
+                    &kp C &kp O &kp M &kp FSLH
+                    &kp I &kp N &kp FSLH
+                    &kp M &kp A &kp R &kp K &kp X &kp T &kp A &kp N &kp G &kp FSLH
+                >;
+        };
+
+        mcr_markxtang: mcr_markxtang {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap
+                    &kp H &kp T &kp T &kp P &kp S &kp COLON &kp FSLH &kp FSLH
+                    &kp M &kp A &kp R &kp K &kp X &kp T &kp A &kp N &kp G &kp DOT
+                    &kp C &kp O &kp M &kp FSLH
+                >;
         };
 
     };
@@ -155,8 +180,8 @@
             label = "NAV";
             bindings = <
 &soft_off     	&trans        	&kp F7        	&kp F8        	&kp F9        	&kp F10       	&kp F11       	&kp F12       	&trans        	&bootloader   	&trans        	&bt BT_CLR    
-&trans        	&trans        	&kp F4        	&kp F5        	&kp F6        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        
-&trans        	&trans        	&kp F1        	&kp F2        	&kp F3        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        
+&trans        	&trans        	&kp F4        	&kp F5        	&kp F6        	&trans        	&trans        	&trans        	&trans        	&mcr_linkedin 	&trans        	&trans        
+&trans        	&trans        	&kp F1        	&kp F2        	&kp F3        	&trans        	&trans        	&mcr_markxtang 	&trans        	&trans        	&trans        	&trans        
 &trans        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        	&trans        	&bt BT(0)     	&bt BT(1)     	&bt BT(2)     	&bt BT(3)     
             >;
         };
